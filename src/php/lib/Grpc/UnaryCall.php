@@ -20,6 +20,7 @@
 namespace Grpc;
 
 /**
+ * @template T of object
  * Represents an active call that sends a single message and then gets a
  * single response.
  */
@@ -50,7 +51,7 @@ class UnaryCall extends AbstractCall
     /**
      * Wait for the server to respond with data and a status.
      *
-     * @return array [response data, status]
+     * @return array{0: T, 1: any} [response data, status]
      */
     public function wait()
     {
